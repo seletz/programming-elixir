@@ -31,6 +31,18 @@ defmodule MyList do
   def do_max([h|t], acc) when h <= acc, do: do_max t, acc
 
   def caesar(l, n), do: map l, fn k -> k + n end
+
+  def flatten([]), do: []
+  def flatten([h|t])
+  when not is_list(h) do
+    [h] ++ flatten(t)
+  end
+
+  def flatten([h|t])
+  when is_list(h) do
+    flatten(h) ++ flatten(t)
+  end
+
 end
 
 IO.puts inspect MyList.map [1, 2, 3], &1*&1 # [1, 4, 9]
@@ -40,4 +52,9 @@ IO.puts inspect MyList.mapsum [1, 2, 3], &1*&1 # [1, 4, 9] -> 14
 IO.puts inspect MyList.max [1,2,3,4,3,2,1] # 4
 IO.puts inspect MyList.caesar [1, 2, 3], 3 # [4, 5, 6]
 IO.puts inspect MyList.caesar 'stefan', 3 # 'vwhidq'
+
+IO.puts inspect MyList.flatten [1, 2, 3] # [1, 2, 3]
+IO.puts inspect MyList.flatten [[1, 2, 3], 4] # [1, 2, 3, 4]
+IO.puts inspect MyList.flatten [[1, 2, 3], [4], []] # [1, 2, 3, 4]
+IO.puts inspect MyList.flatten [[1, 2, 3], [4], [[[[5]]]]] # [1, 2, 3, 4, 5]
 

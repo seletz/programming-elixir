@@ -29,4 +29,12 @@ Now, `r` remembers all reloaded modules, and calling
     /Users/seletz/develop/elixir/elixir-getting-started/programming-elixir/times.ex:1: redefining module Times
     [Times]
 
+Chapter 7
+=========
+
+::
+
+    iex> 'foo' # a list
+    iex> "foo" # something else
+
 .. vim: set ft=rst tw=75 nocin nosi ai sw=4 ts=4 expandtab:
