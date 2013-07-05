@@ -1,4 +1,6 @@
 # 5.2 FizzBuzz
+IO.puts "----------------------------------------------------------------------"
+IO.puts "5.2"
 
 # Write a function that takes three arguments. If the first two are zero,
 # return “FizzBuzz”. If the first is zero, return “Fizz”. If the second is zero
@@ -34,6 +36,8 @@ IO.puts do_fizzbuzz.(15)
 IO.puts do_fizzbuzz.(16)
 
 # 5.3 prefix
+IO.puts "----------------------------------------------------------------------"
+IO.puts "5.3"
 
 prefix = fn pf ->
     fn arg ->
@@ -43,3 +47,10 @@ prefix = fn pf ->
 
 mrs = prefix.("mrs")
 "mrs foo" = mrs.("foo")
+
+# 5.4 & notation with lambdas
+IO.puts "----------------------------------------------------------------------"
+IO.puts "5.4"
+
+IO.puts inspect Enum.map [1, 2, 3, 4], &1 + 2
+Enum.map [1, 2, 3, 4], IO.puts &1
