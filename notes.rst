@@ -2,48 +2,31 @@
 Notes
 =====
 
-:Author:    Stefan Eletzhofer
-:Date:      |today|
-
 Abstract
 ========
 
-In this chapter we show how to use the **ZOPE Testbrowser** package
-to perform **functional tests** for web services.
+Some notes on chapters.
 
-Blurb
-=====
-
-larg, blubb. Some **narkup** and ''another'' and ´a third´.
-
-some preformatted::
-
-    >>> 1 == 2
-    True
-    >>> type(1) is int
-
-A table `,,c`:
-
-+-----+-----+-----+
-| foo | bar | baz |
-+=====+=====+=====+
-| 1   | 2   | 3   |
-+-----+-----+-----+
-
-
-RST Hints
+Chapter 6
 =========
 
-Plone_ is a CMS.
+Module reloading::
 
-.. _Plone: http://plone.org
+    $ iex times.exs
+    iex(1)> Times.double 4
+    8
 
-.. literalinclude:: write_to_excel.js
-   :language: javascript
+Change code, and reload (still in the same REPL)::
 
+    iex(2)> r Times
+    /Users/seletz/develop/elixir/elixir-getting-started/programming-elixir/times.ex:1: redefining module Times
+    {Times,[Times]}
 
-.. image:: aimage.jpg
-   :width: 720px
+Now, `r` remembers all reloaded modules, and calling
+`r` w/o arguments reloads them all::
 
+    iex(3)> r
+    /Users/seletz/develop/elixir/elixir-getting-started/programming-elixir/times.ex:1: redefining module Times
+    [Times]
 
 .. vim: set ft=rst tw=75 nocin nosi ai sw=4 ts=4 expandtab:
