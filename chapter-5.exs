@@ -15,3 +15,20 @@ fizzbuzz = fn
 "Fizz" = fizzbuzz.(0, "bar", "foo")
 "Buzz" = fizzbuzz.("baz", 0, "foo")
 "zonk" = fizzbuzz.("baz", "foo", "zonk")
+
+# The operator rem(a, b) returns the remainder after dividing a by b. Write a
+# function that takes a single integer (n) calls the previous function passing
+# it rem(n,3), rem(n,5), and n. Call it 7 times with the arguments 10, 11, 12,
+# etc. You should get “Buzz, 11, Fizz, 13, 14, FizzBuzz”, 16”.
+
+do_fizzbuzz = fn n ->
+    fizzbuzz.( rem(n,3), rem(n,5), n)
+  end
+
+IO.puts do_fizzbuzz.(10)
+IO.puts do_fizzbuzz.(11)
+IO.puts do_fizzbuzz.(12)
+IO.puts do_fizzbuzz.(13)
+IO.puts do_fizzbuzz.(14)
+IO.puts do_fizzbuzz.(15)
+IO.puts do_fizzbuzz.(16)
