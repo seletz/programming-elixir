@@ -32,3 +32,14 @@ IO.puts do_fizzbuzz.(13)
 IO.puts do_fizzbuzz.(14)
 IO.puts do_fizzbuzz.(15)
 IO.puts do_fizzbuzz.(16)
+
+# 5.3 prefix
+
+prefix = fn pf ->
+    fn arg ->
+        "#{pf} #{arg}"
+      end
+  end
+
+mrs = prefix.("mrs")
+"mrs foo" = mrs.("foo")
